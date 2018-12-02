@@ -19,3 +19,32 @@ Vinyl pork belly literally iceland, chillwave seitan gluten-free synth drinking 
 Crucifix deep v put a bird on it banh mi dreamcatcher small batch, iPhone VHS blog glossier viral asymmetrical plaid trust fund. Bespoke post-ironic kitsch artisan live-edge actually kogi cold-pressed knausgaard man bun pabst humblebrag umami. Waistcoat cray leggings semiotics tumblr. Man braid gluten-free tattooed deep v pork belly sustainable plaid beard ugh brunch drinking vinegar gochujang bespoke unicorn fashion axe. IPhone franzen pok pok hammock church-key 90's fixie viral air plant kombucha helvetica selfies keffiyeh.
 
 Tattooed cronut master cleanse lo-fi pinterest palo santo. Swag meh bespoke, raw denim dreamcatcher PBR&B woke coloring book. Pug tattooed letterpress austin, synth air plant small batch. Chillwave sustainable coloring book occupy salvia +1 hammock vice hashtag etsy poke. Distillery ennui normcore lomo man bun blue bottle lumbersexual hoodie vice, truffaut migas tilde. Kitsch tote bag waistcoat, kickstarter activated charcoal retro XOXO helvetica letterpress. Kale chips leggings vice, iPhone bespoke kinfolk semiotics art party.
+
+## Extra
+
+* gatsby-transformer-remark
+
+```
+allMarkdownRemark {
+    totalCount
+    edges {
+      node {
+        html
+        excerpt
+        frontmatter {
+          title
+          date(formatString: "MMMM DD, YYYY")
+          path
+        }
+      }
+    }
+  }
+  ```
+
+- allMarkdownRemark allows us to access the posts
+- totalCount tells how many posts we have
+- edges represents all the content
+- node is one individual element which is part of the edges
+- html converts the markdown post into real html
+- excerpt shows a brief intro
+- frontmatter contains info about the post
