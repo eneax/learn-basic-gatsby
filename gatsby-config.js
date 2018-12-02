@@ -7,6 +7,7 @@ module.exports = {
     // custom metadata for each page
     'gatsby-plugin-react-helmet',
     {
+      // makes images available as img files
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -31,11 +32,13 @@ module.exports = {
     // To learn more, visit: https://gatsby.app/offline
     'gatsby-plugin-offline',
     {
+      // makes posts available
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/posts`,
         name: 'posts'
       }
-    }
+    },
+    'gatsby-transformer-remark'
   ],
 }
