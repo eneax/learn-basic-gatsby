@@ -22,6 +22,42 @@ Tattooed cronut master cleanse lo-fi pinterest palo santo. Swag meh bespoke, raw
 
 ## Extra
 
+* gatsby-plugin-react-helmet
+It allows us to add custom metadata for each page
+
+
+
+* gatsby-source-filesystem
+
+```
+{
+  resolve: `gatsby-source-filesystem`,
+  options: {
+  name: `images`,
+  path: `${__dirname}/src/images`,
+  },
+}
+```
+It makes images available as img files by looking inside the images directory
+
+
+
+* gatsby-source-filesystem
+
+```
+{
+  resolve: `gatsby-source-filesystem`,
+  options: {
+  path: `${__dirname}/src/posts`,
+  name: 'posts'
+  }
+},
+```
+
+It makes posts available by looking inside the posts directory
+
+
+
 * gatsby-transformer-remark
 
 ```
