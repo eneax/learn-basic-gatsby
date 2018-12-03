@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { graphql } from 'gatsby'
 import Layout from './layout'
 
 export default class postLayout extends Component {
@@ -10,3 +11,32 @@ export default class postLayout extends Component {
     )
   }
 }
+
+export const query = graphql`
+  query PostQuery {
+    markdownRemark(frontmatter: {
+      slug: {
+        eq: "/third-post" 
+      }
+    }) {
+      html
+      frontmatter {
+        title
+        date
+        slug
+      }
+    }
+  }
+`
+
+/* 
+Static Query 
+- can be used everywhere
+- doesn't accept variables (parameters)
+- cannot use context
+*/
+
+/* 
+Page Query 
+- must be used on pages
+*/
