@@ -4,19 +4,24 @@ import Layout from './layout'
 
 export default class postLayout extends Component {
   render() {
+    const { markdownRemark } = this.props.data
+
     return (
       <Layout>
-        <h1>Post Layout</h1>
+        <h1>{markdownRemark.frontmatter.title}</h1>
+        <div dangerouslySetInnerHTML={{
+          __html: markdownRemark.html
+        }}/>
       </Layout>
     )
   }
 }
 
 export const query = graphql`
-  query PostQuery {
+  query PostQuery($slug: String!) {
     markdownRemark(frontmatter: {
       slug: {
-        eq: "/third-post" 
+        eq: $slug
       }
     }) {
       html
@@ -28,6 +33,12 @@ export const query = graphql`
     }
   }
 `
+
+/*
+query PostQuery($slug: String!)
+- PostQuery takes as argument a slug, which has to be a string
+- the slug is required to be a String!
+*/
 
 /* 
 Static Query 
