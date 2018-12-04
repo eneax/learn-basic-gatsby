@@ -13,7 +13,8 @@ const MainLayout = styled.main`
   max-width: 90%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 4fr 1fr; /* sidebar takes 1 fraction and the rest is 4 fractions */
+  grid-template-columns: 3fr 1fr; /* sidebar takes 1 fraction and the rest is 4 fractions */
+  grid-gap: 40px;
 `
 
 const Layout = ({ children }) => (
