@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-import logo from '../images/logo.svg'
+import logo from '../images/gatsby-icon.png'
 
 import styled from 'styled-components'
 
@@ -15,7 +15,7 @@ const HeaderWrapper = styled.div`
 
 const HeaderContainer = styled.div`
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 90%;
   padding: .5rem;
 `
 
