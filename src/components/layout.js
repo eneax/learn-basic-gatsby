@@ -79,7 +79,7 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
-Layout.defaulProps = {
+Layout.defaultProps = {
   location: {},
 }
 
