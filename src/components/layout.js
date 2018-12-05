@@ -9,10 +9,11 @@ import './layout.css'
 
 import styled from 'styled-components'
 import Img from 'gatsby-image'
+import {Spring} from 'react-spring'
 
 const MainLayout = styled.main`
   max-width: 90%;
-  margin: 0 auto;
+  margin: 1rem auto;
   display: grid;
   grid-template-columns: 3fr 1fr; /* sidebar takes 1 fraction and the rest is 4 fractions */
   grid-gap: 40px;
@@ -52,10 +53,16 @@ const Layout = ({ children, location }) => (
         </Helmet>
         <Header siteTitle={data.site.siteMetadata.title} />
 
-        {location.pathname === '/' &&
-          <Img fluid={data.file.childImageSharp.fluid} />
-          // only display the image in the homepage
-        }
+        <Spring
+          from={{height: location.pathname === '/' ? 100 : 200}}
+          to={{height: location.pathname === '/' ? 200 : 100}} 
+        >
+          {styles => (
+            <div style={{overflow: 'hidden', ...styles}}>
+              <Img fluid={data.file.childImageSharp.fluid} />
+            </div>
+          )}
+        </Spring>
         
         <MainLayout>
           <div>
