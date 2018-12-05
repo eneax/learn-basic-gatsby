@@ -79,4 +79,8 @@ Layout.propTypes = {
   children: PropTypes.node.isRequired,
 }
 
+Layout.defaulProps = {
+  location: {},
+}
+
 export default Layout
